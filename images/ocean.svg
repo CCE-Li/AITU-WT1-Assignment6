@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Tropical ocean with island">
+  <defs>
+    <linearGradient id="oceanSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0ea5e9" />
+      <stop offset="0.6" stop-color="#7dd3fc" />
+      <stop offset="1" stop-color="#e0f2fe" />
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22d3ee" />
+      <stop offset="0.4" stop-color="#0891b2" />
+      <stop offset="1" stop-color="#0e4f6b" />
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde68a" />
+      <stop offset="1" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#oceanSky)" />
+  <circle cx="130" cy="90" r="46" fill="#fef9c3" opacity="0.95" />
+
+  <g fill="#ffffff" opacity="0.85">
+    <ellipse cx="560" cy="95" rx="70" ry="26" />
+    <ellipse cx="610" cy="86" rx="46" ry="22" />
+    <ellipse cx="512" cy="88" rx="38" ry="18" />
+    <ellipse cx="250" cy="165" rx="52" ry="19" />
+    <ellipse cx="292" cy="158" rx="34" ry="15" />
+  </g>
+
+  <rect y="300" width="800" height="200" fill="url(#water)" />
+
+  <path d="M0 300 C 120 286, 220 312, 330 300 S 560 282, 800 300 L800 316 C 600 300, 470 322, 330 314 S 110 300, 0 314 Z"
+        fill="#a5f3fc" opacity="0.6" />
+
+  <g>
+    <ellipse cx="205" cy="330" rx="120" ry="26" fill="url(#sand)" />
+    <rect x="186" y="222" width="9" height="104" rx="4" fill="#78350f" />
+    <path d="M190 224 C 150 200, 130 172, 128 152 C 160 158, 186 186, 190 210 Z" fill="#15803d" />
+    <path d="M190 224 C 232 202, 252 176, 256 156 C 224 160, 198 188, 194 210 Z" fill="#16a34a" />
+    <path d="M190 216 C 176 186, 178 152, 190 132 C 204 154, 206 188, 194 216 Z" fill="#22c55e" />
+    <path d="M190 232 C 168 226, 152 214, 144 202 C 166 200, 184 210, 192 224 Z" fill="#15803d" />
+  </g>
+
+  <g opacity="0.5">
+    <path d="M0 370 C 140 358, 260 382, 400 370 S 660 356, 800 372" fill="none" stroke="#bae6fd" stroke-width="4" />
+    <path d="M0 415 C 150 402, 280 428, 430 415 S 680 400, 800 418" fill="none" stroke="#bae6fd" stroke-width="4" />
+    <path d="M0 462 C 160 448, 300 474, 460 460 S 700 446, 800 464" fill="none" stroke="#bae6fd" stroke-width="4" />
+  </g>
+</svg>

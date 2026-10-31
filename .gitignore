@@ -1,0 +1,16 @@
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Dependencies (not used by this project, ignored just in case)
+node_modules/
+package-lock.json
+
+# Assignment brief (kept out of the repository)
+*.docx
+
+# Local tooling configuration
+.commandcode/

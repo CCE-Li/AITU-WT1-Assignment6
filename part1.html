@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 1 &middot; Setup &amp; Selectors — Assignment #6 jQuery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="index.html">
+        <span class="navbar__logo">jQ</span>
+        <span>Assignment #6</span>
+      </a>
+      <button class="navbar__toggle" type="button" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="navbar__links">
+        <a class="navbar__link" href="index.html">Home</a>
+        <a class="navbar__link" href="part1.html">Part 1 &middot; Selectors</a>
+        <a class="navbar__link" href="part2.html">Part 2 &middot; Effects</a>
+        <a class="navbar__link" href="part3.html">Part 3 &middot; DOM</a>
+        <a class="navbar__link" href="part4.html">Part 4 &middot; Animations</a>
+        <a class="navbar__link" href="part5.html">Part 5 &middot; Mini Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1 class="page__title">Part 1 &mdash; Getting Started with jQuery</h1>
+    <p class="page__subtitle">Tasks 0 and 1: library setup, the ready event, and the three main selector types.</p>
+
+    <!-- ============ TASK 0 ============ -->
+    <section class="card" id="task0">
+      <div class="card__head">
+        <span class="badge">Task 0</span>
+        <h2>Setup</h2>
+      </div>
+      <p>jQuery is loaded from the official CDN, a <code>$(document).ready()</code> function runs on every page, and it prints <code>"jQuery is ready!"</code> in the console.</p>
+
+      <ul class="checklist">
+        <li>jQuery included from a CDN &mdash; currently reporting version <strong id="jquery-version">checking&hellip;</strong></li>
+        <li><code>$(document).ready()</code> handler registered in <code>js/common.js</code></li>
+        <li><code>"jQuery is ready!"</code> written to the browser console when the DOM is ready</li>
+      </ul>
+
+      <pre class="code"><span class="c-comment">// js/common.js</span>
+$(document).ready(function () {
+  console.log("jQuery is ready!");
+  console.log("jQuery version:", $.fn.jquery);
+});</pre>
+
+      <div class="btn-row">
+        <button id="btn-log" class="btn" type="button">Print &ldquo;jQuery is ready!&rdquo; again</button>
+      </div>
+
+      <div class="console">
+        <div class="console__title">Console mirror</div>
+        <ul id="console-log" class="console__body"></ul>
+      </div>
+      <p class="hint">The panel above repeats what is printed to the real DevTools console, so the result stays visible during the demo.</p>
+    </section>
+
+    <!-- ============ TASK 1 ============ -->
+    <section class="card" id="task1">
+      <div class="card__head">
+        <span class="badge">Task 1</span>
+        <h2>Selectors &amp; CSS</h2>
+      </div>
+      <p>Three selectors are used below: an <strong>ID</strong> selector, a <strong>class</strong> selector and a <strong>tag</strong> selector. Content changes with <code>.text()</code> and <code>.html()</code>, styles change with <code>.css()</code>.</p>
+
+      <div class="demo-stage" id="selector-demo">
+        <h3 id="demo-title">I am selected by my ID: #demo-title</h3>
+        <p class="demo-text">Paragraph 1 &mdash; selected with the class <code>.demo-text</code>.</p>
+        <p class="demo-text">Paragraph 2 &mdash; selected with the class <code>.demo-text</code>.</p>
+        <p class="demo-text">Paragraph 3 &mdash; selected with the class <code>.demo-text</code>.</p>
+      </div>
+
+      <div class="btn-row">
+        <button id="btn-id-text" class="btn" type="button">.text() &mdash; by ID</button>
+        <button id="btn-class-html" class="btn" type="button">.html() &mdash; by class</button>
+        <button id="btn-tag-css" class="btn" type="button">.css() &mdash; by tag</button>
+        <button id="btn-reset-1" class="btn btn--ghost" type="button">Reset demo</button>
+      </div>
+
+      <p id="selector-output" class="output"></p>
+
+      <pre class="code"><span class="c-comment">// ID selector + .text()</span>
+$("#demo-title").text("Changed with the ID selector!");
+
+<span class="c-comment">// class selector + .html()</span>
+$(".demo-text").html("Changed with &lt;strong&gt;.html()&lt;/strong&gt;");
+
+<span class="c-comment">// tag selector + .css()</span>
+$("p").css({ "color": "#c2410c", "font-weight": "600" });</pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Assignment #6 &mdash; jQuery (Selectors, Effects, Animations) &middot;
+      Student: <strong>Your Full Name</strong>, Group: <strong>Your Group</strong>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/part1.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 5 &middot; Mini Project — Assignment #6 jQuery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="index.html">
+        <span class="navbar__logo">jQ</span>
+        <span>Assignment #6</span>
+      </a>
+      <button class="navbar__toggle" type="button" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="navbar__links">
+        <a class="navbar__link" href="index.html">Home</a>
+        <a class="navbar__link" href="part1.html">Part 1 &middot; Selectors</a>
+        <a class="navbar__link" href="part2.html">Part 2 &middot; Effects</a>
+        <a class="navbar__link" href="part3.html">Part 3 &middot; DOM</a>
+        <a class="navbar__link" href="part4.html">Part 4 &middot; Animations</a>
+        <a class="navbar__link" href="part5.html">Part 5 &middot; Mini Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1 class="page__title">Part 5 &mdash; Mini Project</h1>
+    <p class="page__subtitle">Task 11: an interactive accordion menu that expands and collapses with slide animations.</p>
+
+    <section class="card" id="task11">
+      <div class="card__head">
+        <span class="badge">Task 11</span>
+        <h2>Accordion Menu</h2>
+      </div>
+      <p>
+        Click a section header to open it. The open section slides closed automatically, so only one
+        panel is visible at a time &mdash; the classic accordion behaviour built from
+        <code>.slideUp()</code> and <code>.slideDown()</code>.
+      </p>
+
+      <div class="btn-row">
+        <button id="btn-expand-all" class="btn" type="button">Expand all</button>
+        <button id="btn-collapse-all" class="btn btn--ghost" type="button">Collapse all</button>
+        <button id="btn-toggle-first" class="btn btn--accent" type="button">Toggle first section</button>
+      </div>
+
+      <div class="accordion" id="accordion">
+
+        <div class="accordion__item">
+          <button class="accordion__header" type="button">
+            <span>What is jQuery?</span>
+            <span class="accordion__icon">+</span>
+          </button>
+          <div class="accordion__content">
+            <p>
+              jQuery is a fast, small and feature-rich JavaScript library. It makes HTML document
+              traversal and manipulation, event handling and animation much simpler through an
+              easy-to-use API that works across many browsers.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__header" type="button">
+            <span>How do selectors work?</span>
+            <span class="accordion__icon">+</span>
+          </button>
+          <div class="accordion__content">
+            <p>
+              Selectors find the elements you want to work with: <code>$("#id")</code> for an ID,
+              <code>$(".class")</code> for a class and <code>$("p")</code> for a tag. The same
+              selector can match many elements, and the resulting collection supports chaining.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__header" type="button">
+            <span>Which effects are available?</span>
+            <span class="accordion__icon">+</span>
+          </button>
+          <div class="accordion__content">
+            <p>
+              Visibility: <code>.hide()</code>, <code>.show()</code>, <code>.toggle()</code>.
+              Fading: <code>.fadeIn()</code>, <code>.fadeOut()</code>, <code>.fadeToggle()</code>.
+              Sliding: <code>.slideUp()</code>, <code>.slideDown()</code>, <code>.slideToggle()</code>.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion__item">
+          <button class="accordion__header" type="button">
+            <span>What about custom animations?</span>
+            <span class="accordion__icon">+</span>
+          </button>
+          <div class="accordion__content">
+            <p>
+              The <code>.animate()</code> method changes any numeric CSS property &mdash; size,
+              position, opacity &mdash; over a given duration. Chained calls are queued and executed
+              one after another, which makes step-by-step animations easy to build.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <p id="accordion-status" class="output"></p>
+
+      <pre class="code"><span class="c-comment">// Task 11 — accordion menu</span>
+$(".accordion__header").on("click", function () {
+  var $item = $(this).parent();
+
+  if ($item.hasClass("is-open")) {          <span class="c-comment">// already open -> close it</span>
+    $item.removeClass("is-open");
+    $item.find(".accordion__content").slideUp(400);
+    return;
+  }
+
+  $(".accordion__item").removeClass("is-open");            <span class="c-comment">// close the others</span>
+  $(".accordion__content").slideUp(400);
+
+  $item.addClass("is-open");                                <span class="c-comment">// open the clicked one</span>
+  $item.find(".accordion__content").slideDown(400);
+});</pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Assignment #6 &mdash; jQuery (Selectors, Effects, Animations) &middot;
+      Student: <strong>Your Full Name</strong>, Group: <strong>Your Group</strong>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/part5.js"></script>
+</body>
+</html>

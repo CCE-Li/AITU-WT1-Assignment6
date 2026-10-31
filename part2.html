@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 2 &middot; Effects — Assignment #6 jQuery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="index.html">
+        <span class="navbar__logo">jQ</span>
+        <span>Assignment #6</span>
+      </a>
+      <button class="navbar__toggle" type="button" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="navbar__links">
+        <a class="navbar__link" href="index.html">Home</a>
+        <a class="navbar__link" href="part1.html">Part 1 &middot; Selectors</a>
+        <a class="navbar__link" href="part2.html">Part 2 &middot; Effects</a>
+        <a class="navbar__link" href="part3.html">Part 3 &middot; DOM</a>
+        <a class="navbar__link" href="part4.html">Part 4 &middot; Animations</a>
+        <a class="navbar__link" href="part5.html">Part 5 &middot; Mini Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1 class="page__title">Part 2 &mdash; jQuery Effects</h1>
+    <p class="page__subtitle">Tasks 2 to 4: visibility, fade and slide methods.</p>
+
+    <!-- ============ TASK 2 ============ -->
+    <section class="card" id="task2">
+      <div class="card__head">
+        <span class="badge">Task 2</span>
+        <h2>Visibility methods</h2>
+      </div>
+      <p>A paragraph controlled by <strong>Hide</strong> and <strong>Show</strong> buttons, plus a toggle button.</p>
+
+      <div class="demo-stage">
+        <p id="visibility-text">
+          This paragraph is hidden and shown with <code>.hide()</code>, <code>.show()</code>
+          and <code>.toggle()</code>. Press the buttons and watch the layout collapse and come back.
+        </p>
+      </div>
+
+      <div class="btn-row">
+        <button id="btn-hide" class="btn" type="button">Hide</button>
+        <button id="btn-show" class="btn" type="button">Show</button>
+        <button id="btn-toggle-vis" class="btn btn--accent" type="button">Toggle</button>
+      </div>
+
+      <pre class="code"><span class="c-comment">// Task 2</span>
+$("#btn-hide").on("click", function () { $("#visibility-text").hide(400); });
+$("#btn-show").on("click", function () { $("#visibility-text").show(400); });
+$("#btn-toggle-vis").on("click", function () { $("#visibility-text").toggle(400); });</pre>
+    </section>
+
+    <!-- ============ TASK 3 ============ -->
+    <section class="card" id="task3">
+      <div class="card__head">
+        <span class="badge">Task 3</span>
+        <h2>Fade methods</h2>
+      </div>
+      <p>An image that fades in, fades out and toggles its opacity.</p>
+
+      <div class="demo-stage">
+        <img id="fade-image" class="demo-img" src="images/aurora.svg"
+             alt="Aurora illustration used for the fade demo" />
+      </div>
+
+      <div class="btn-row">
+        <button id="btn-fade-in" class="btn" type="button">fadeIn()</button>
+        <button id="btn-fade-out" class="btn" type="button">fadeOut()</button>
+        <button id="btn-fade-toggle" class="btn btn--accent" type="button">fadeToggle()</button>
+        <button id="btn-fade-to" class="btn btn--ghost" type="button">fadeTo(0.3)</button>
+      </div>
+
+      <pre class="code"><span class="c-comment">// Task 3</span>
+$("#btn-fade-in").on("click", function () { $("#fade-image").fadeIn(600); });
+$("#btn-fade-out").on("click", function () { $("#fade-image").fadeOut(600); });
+$("#btn-fade-toggle").on("click", function () { $("#fade-image").fadeToggle(600); });</pre>
+    </section>
+
+    <!-- ============ TASK 4 ============ -->
+    <section class="card" id="task4">
+      <div class="card__head">
+        <span class="badge">Task 4</span>
+        <h2>Slide methods</h2>
+      </div>
+      <p>A collapsible panel controlled with the slide methods.</p>
+
+      <div class="panel">
+        <div class="panel__header">Why is jQuery still useful today?</div>
+        <div id="slide-panel" class="panel__body">
+          <p>
+            jQuery wraps complex browser APIs into short, chainable methods. A single line such as
+            <code>$("#panel").slideToggle()</code> replaces a lot of manual DOM, style and animation
+            bookkeeping &mdash; which is why it is still found in many legacy and CMS-based projects.
+          </p>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button id="btn-slide-up" class="btn" type="button">slideUp()</button>
+        <button id="btn-slide-down" class="btn" type="button">slideDown()</button>
+        <button id="btn-slide-toggle" class="btn btn--accent" type="button">slideToggle()</button>
+      </div>
+
+      <pre class="code"><span class="c-comment">// Task 4</span>
+$("#btn-slide-up").on("click", function () { $("#slide-panel").slideUp(500); });
+$("#btn-slide-down").on("click", function () { $("#slide-panel").slideDown(500); });
+$("#btn-slide-toggle").on("click", function () { $("#slide-panel").slideToggle(500); });</pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Assignment #6 &mdash; jQuery (Selectors, Effects, Animations) &middot;
+      Student: <strong>Your Full Name</strong>, Group: <strong>Your Group</strong>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/part2.js"></script>
+</body>
+</html>

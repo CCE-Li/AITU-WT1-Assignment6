@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 4 &middot; Animations — Assignment #6 jQuery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="index.html">
+        <span class="navbar__logo">jQ</span>
+        <span>Assignment #6</span>
+      </a>
+      <button class="navbar__toggle" type="button" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="navbar__links">
+        <a class="navbar__link" href="index.html">Home</a>
+        <a class="navbar__link" href="part1.html">Part 1 &middot; Selectors</a>
+        <a class="navbar__link" href="part2.html">Part 2 &middot; Effects</a>
+        <a class="navbar__link" href="part3.html">Part 3 &middot; DOM</a>
+        <a class="navbar__link" href="part4.html">Part 4 &middot; Animations</a>
+        <a class="navbar__link" href="part5.html">Part 5 &middot; Mini Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1 class="page__title">Part 4 &mdash; Animations</h1>
+    <p class="page__subtitle">Tasks 8 to 10: basic, sequential and combined <code>.animate()</code> calls.</p>
+
+    <!-- ============ TASK 8 ============ -->
+    <section class="card" id="task8">
+      <div class="card__head">
+        <span class="badge">Task 8</span>
+        <h2>Basic animation</h2>
+      </div>
+      <p>The square grows and moves to a new position with a single <code>.animate()</code> call.</p>
+
+      <div class="anim-stage">
+        <div id="box8" class="anim-box">Task 8</div>
+      </div>
+
+      <div class="btn-row">
+        <button id="btn-animate-basic" class="btn" type="button">Grow &amp; move</button>
+        <button id="btn-reset-8" class="btn btn--ghost" type="button">Reset</button>
+      </div>
+
+      <pre class="code"><span class="c-comment">// Task 8</span>
+$("#btn-animate-basic").on("click", function () {
+  $("#box8").animate({
+    width: "180px",
+    height: "180px",
+    left: "420px",
+    top: "60px"
+  }, 900);
+});</pre>
+    </section>
+
+    <!-- ============ TASK 9 ============ -->
+    <section class="card" id="task9">
+      <div class="card__head">
+        <span class="badge">Task 9</span>
+        <h2>Sequential animations</h2>
+      </div>
+      <p>The box is animated step by step: move right &rarr; move down &rarr; shrink &rarr; return to the original position. Chained <code>.animate()</code> calls run one after another.</p>
+
+      <div class="anim-stage">
+        <div id="box9" class="anim-box">Task 9</div>
+      </div>
+
+      <div class="btn-row">
+        <button id="btn-animate-sequence" class="btn" type="button">Run sequence</button>
+        <button id="btn-reset-9" class="btn btn--ghost" type="button">Reset</button>
+      </div>
+
+      <pre class="code"><span class="c-comment">// Task 9 — the queue runs these one after another</span>
+$("#box9")
+  .animate({ left: "560px" }, 600)                 <span class="c-comment">// 1. move right</span>
+  .animate({ top: "120px" }, 600)                  <span class="c-comment">// 2. move down</span>
+  .animate({ width: "50px", height: "50px" }, 600) <span class="c-comment">// 3. shrink</span>
+  .animate({ left: "20px", top: "20px", width: "90px", height: "90px" }, 700); <span class="c-comment">// 4. return</span></pre>
+    </section>
+
+    <!-- ============ TASK 10 ============ -->
+    <section class="card" id="task10">
+      <div class="card__head">
+        <span class="badge">Task 10</span>
+        <h2>Combined animation</h2>
+      </div>
+      <p>Opacity, size and movement change together inside <strong>one</strong> <code>.animate()</code> call.</p>
+
+      <div class="anim-stage">
+        <div id="box10" class="anim-box">Task 10</div>
+      </div>
+
+      <div class="btn-row">
+        <button id="btn-animate-combined" class="btn" type="button">Run combined animation</button>
+        <button id="btn-reset-10" class="btn btn--ghost" type="button">Reset</button>
+      </div>
+
+      <pre class="code"><span class="c-comment">// Task 10 — opacity + size + movement in ONE call</span>
+$("#box10").animate({
+  opacity: 0.25,
+  width: "200px",
+  height: "200px",
+  left: "480px",
+  top: "40px"
+}, 1000);</pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Assignment #6 &mdash; jQuery (Selectors, Effects, Animations) &middot;
+      Student: <strong>Your Full Name</strong>, Group: <strong>Your Group</strong>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/part4.js"></script>
+</body>
+</html>

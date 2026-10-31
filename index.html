@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assignment #6 — jQuery (Selectors, Effects, Animations)</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="index.html">
+        <span class="navbar__logo">jQ</span>
+        <span>Assignment #6</span>
+      </a>
+      <button class="navbar__toggle" type="button" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="navbar__links">
+        <a class="navbar__link" href="index.html">Home</a>
+        <a class="navbar__link" href="part1.html">Part 1 &middot; Selectors</a>
+        <a class="navbar__link" href="part2.html">Part 2 &middot; Effects</a>
+        <a class="navbar__link" href="part3.html">Part 3 &middot; DOM</a>
+        <a class="navbar__link" href="part4.html">Part 4 &middot; Animations</a>
+        <a class="navbar__link" href="part5.html">Part 5 &middot; Mini Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <h1>Assignment #6 &mdash; jQuery</h1>
+      <p>
+        Selectors, effects and animations. Every task of the assignment is implemented on its own
+        page and linked from the navigation bar above.
+      </p>
+      <div class="student-bar">
+        <span class="student-tag">Student: <strong>Your Full Name</strong></span>
+        <span class="student-tag">Group: <strong>Your Group</strong></span>
+        <span class="student-tag">jQuery 3.7.1 (CDN)</span>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="card">
+        <div class="card__head">
+          <span class="badge">Overview</span>
+          <h2>What is inside this project</h2>
+        </div>
+        <p>
+          The assignment is split into five parts and twelve tasks. Open a card below to jump
+          straight to the task. Each page shows the interactive demo <em>and</em> the jQuery code
+          that powers it.
+        </p>
+        <ul class="checklist">
+          <li><strong>Part 1</strong> &mdash; jQuery from CDN, <code>$(document).ready()</code>, selectors &amp; CSS</li>
+          <li><strong>Part 2</strong> &mdash; visibility, fade and slide effects</li>
+          <li><strong>Part 3</strong> &mdash; adding / removing elements, attributes, live form input</li>
+          <li><strong>Part 4</strong> &mdash; <code>.animate()</code>: basic, sequential and combined animations</li>
+          <li><strong>Part 5</strong> &mdash; mini project: accordion menu built with slide animations</li>
+        </ul>
+      </div>
+
+      <h2 class="page__title" style="font-size: 1.35rem;">Task index</h2>
+      <div class="grid grid--3" style="margin-bottom: 26px;">
+
+        <a class="task-link" href="part1.html#task0">
+          <span class="task-link__num">Task 0</span>
+          <span class="task-link__body">
+            <strong>Setup</strong>
+            <span>jQuery CDN &amp; ready handler</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part1.html#task1">
+          <span class="task-link__num">Task 1</span>
+          <span class="task-link__body">
+            <strong>Selectors &amp; CSS</strong>
+            <span>.text(), .html(), .css()</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part2.html#task2">
+          <span class="task-link__num">Task 2</span>
+          <span class="task-link__body">
+            <strong>Visibility</strong>
+            <span>.hide(), .show(), .toggle()</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part2.html#task3">
+          <span class="task-link__num">Task 3</span>
+          <span class="task-link__body">
+            <strong>Fade</strong>
+            <span>.fadeIn(), .fadeOut(), .fadeToggle()</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part2.html#task4">
+          <span class="task-link__num">Task 4</span>
+          <span class="task-link__body">
+            <strong>Slide</strong>
+            <span>.slideUp(), .slideDown(), .slideToggle()</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part3.html#task5">
+          <span class="task-link__num">Task 5</span>
+          <span class="task-link__body">
+            <strong>Add &amp; Remove</strong>
+            <span>.append(), .prepend(), .remove()</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part3.html#task6">
+          <span class="task-link__num">Task 6</span>
+          <span class="task-link__body">
+            <strong>Attributes</strong>
+            <span>.attr() on src and href</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part3.html#task7">
+          <span class="task-link__num">Task 7</span>
+          <span class="task-link__body">
+            <strong>Form interaction</strong>
+            <span>.val() &amp; live preview</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part4.html#task8">
+          <span class="task-link__num">Task 8</span>
+          <span class="task-link__body">
+            <strong>Basic animation</strong>
+            <span>size &amp; position</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part4.html#task9">
+          <span class="task-link__num">Task 9</span>
+          <span class="task-link__body">
+            <strong>Sequential animation</strong>
+            <span>right &rarr; down &rarr; shrink &rarr; home</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part4.html#task10">
+          <span class="task-link__num">Task 10</span>
+          <span class="task-link__body">
+            <strong>Combined animation</strong>
+            <span>opacity + size + movement</span>
+          </span>
+        </a>
+
+        <a class="task-link" href="part5.html#task11">
+          <span class="task-link__num">Task 11</span>
+          <span class="task-link__body">
+            <strong>Mini project</strong>
+            <span>Accordion menu</span>
+          </span>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Assignment #6 &mdash; jQuery (Selectors, Effects, Animations) &middot;
+      Student: <strong>Your Full Name</strong>, Group: <strong>Your Group</strong>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 3 &middot; DOM Manipulation — Assignment #6 jQuery</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a class="navbar__brand" href="index.html">
+        <span class="navbar__logo">jQ</span>
+        <span>Assignment #6</span>
+      </a>
+      <button class="navbar__toggle" type="button" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="navbar__links">
+        <a class="navbar__link" href="index.html">Home</a>
+        <a class="navbar__link" href="part1.html">Part 1 &middot; Selectors</a>
+        <a class="navbar__link" href="part2.html">Part 2 &middot; Effects</a>
+        <a class="navbar__link" href="part3.html">Part 3 &middot; DOM</a>
+        <a class="navbar__link" href="part4.html">Part 4 &middot; Animations</a>
+        <a class="navbar__link" href="part5.html">Part 5 &middot; Mini Project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <h1 class="page__title">Part 3 &mdash; DOM Manipulation with jQuery</h1>
+    <p class="page__subtitle">Tasks 5 to 7: adding and removing elements, changing attributes, and live form feedback.</p>
+
+    <!-- ============ TASK 5 ============ -->
+    <section class="card" id="task5">
+      <div class="card__head">
+        <span class="badge">Task 5</span>
+        <h2>Add &amp; remove elements</h2>
+      </div>
+      <p>A list with <strong>Add Item</strong> and <strong>Remove Item</strong> buttons that use <code>.append()</code>, <code>.prepend()</code> and <code>.remove()</code>.</p>
+
+      <ul id="item-list" class="item-list">
+        <li><span>Item 1 &mdash; created in the markup</span><span class="tag">original</span></li>
+        <li><span>Item 2 &mdash; created in the markup</span><span class="tag">original</span></li>
+      </ul>
+
+      <div class="btn-row">
+        <button id="btn-append" class="btn" type="button">Add Item (append)</button>
+        <button id="btn-prepend" class="btn" type="button">Add to top (prepend)</button>
+        <button id="btn-remove" class="btn btn--accent" type="button">Remove Item (remove)</button>
+        <button id="btn-remove-all" class="btn btn--ghost" type="button">Remove all</button>
+      </div>
+
+      <p id="list-output" class="output"></p>
+
+      <pre class="code"><span class="c-comment">// Task 5</span>
+$("#btn-append").on("click", function () {
+  $("#item-list").append("&lt;li&gt;Item " + counter + "&lt;/li&gt;");   <span class="c-comment">// add at the end</span>
+});
+
+$("#btn-prepend").on("click", function () {
+  $("#item-list").prepend("&lt;li&gt;Item " + counter + "&lt;/li&gt;");  <span class="c-comment">// add at the top</span>
+});
+
+$("#btn-remove").on("click", function () {
+  $("#item-list li").last().remove();                      <span class="c-comment">// delete an element</span>
+});</pre>
+    </section>
+
+    <!-- ============ TASK 6 ============ -->
+    <section class="card" id="task6">
+      <div class="card__head">
+        <span class="badge">Task 6</span>
+        <h2>Modifying attributes</h2>
+      </div>
+      <p>One button swaps the image <code>src</code>, another rewrites the <code>href</code> of a link.</p>
+
+      <div class="grid grid--2">
+        <div>
+          <h3 style="font-size: 1rem; margin: 16px 0 10px;">Image source</h3>
+          <img id="attr-image" class="demo-img" src="images/sunset.svg"
+               alt="Illustration used for the src attribute demo" />
+          <div class="btn-row">
+            <button id="btn-change-src" class="btn" type="button">Change image src</button>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size: 1rem; margin: 16px 0 10px;">Link href</h3>
+          <p><a id="attr-link" href="https://api.jquery.com" target="_blank" rel="noopener">Visit the jQuery API documentation</a></p>
+          <div class="btn-row">
+            <button id="btn-change-href" class="btn" type="button">Change link href</button>
+          </div>
+          <p class="hint">The current destination is shown below after every change.</p>
+          <p id="attr-output" class="output"></p>
+        </div>
+      </div>
+
+      <pre class="code"><span class="c-comment">// Task 6</span>
+$("#btn-change-src").on("click", function () {
+  var next = $("#attr-image").attr("src") === "images/sunset.svg"
+    ? "images/ocean.svg" : "images/sunset.svg";
+  $("#attr-image").attr("src", next);          <span class="c-comment">// rewrite the attribute</span>
+});
+
+$("#btn-change-href").on("click", function () {
+  $("#attr-link").attr("href", "https://www.w3schools.com/jquery/");
+});</pre>
+    </section>
+
+    <!-- ============ TASK 7 ============ -->
+    <section class="card" id="task7">
+      <div class="card__head">
+        <span class="badge">Task 7</span>
+        <h2>Form interaction</h2>
+      </div>
+      <p>While you type, the values are read with <code>.val()</code> and written into the preview below with <code>.text()</code>.</p>
+
+      <div class="grid grid--2">
+        <div>
+          <div class="form-row">
+            <label for="input-name">Name</label>
+            <input id="input-name" type="text" placeholder="Type your name..." autocomplete="off" />
+          </div>
+          <div class="form-row">
+            <label for="input-email">Email</label>
+            <input id="input-email" type="email" placeholder="Type your email..." autocomplete="off" />
+          </div>
+          <div class="btn-row">
+            <button id="btn-clear-form" class="btn btn--ghost" type="button">Clear</button>
+          </div>
+        </div>
+
+        <div class="live-preview">
+          <p><strong>Live preview</strong></p>
+          <p>Hello, <span id="preview-name" class="preview-value">&mdash;</span>!</p>
+          <p>Your email is: <span id="preview-email" class="preview-value">&mdash;</span></p>
+          <p>Characters typed: <span id="preview-count">0</span></p>
+        </div>
+      </div>
+
+      <pre class="code"><span class="c-comment">// Task 7</span>
+$("#input-name, #input-email").on("input", function () {
+  $("#preview-name").text($("#input-name").val() || "—");   <span class="c-comment">// read with .val()</span>
+  $("#preview-email").text($("#input-email").val() || "—");  <span class="c-comment">// write with .text()</span>
+});</pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      Assignment #6 &mdash; jQuery (Selectors, Effects, Animations) &middot;
+      Student: <strong>Your Full Name</strong>, Group: <strong>Your Group</strong>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/part3.js"></script>
+</body>
+</html>
