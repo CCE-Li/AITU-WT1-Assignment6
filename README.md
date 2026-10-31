@@ -1,8 +1,8 @@
 # Assignment #6 — jQuery (Selectors, Effects, Animations)
 
 **Course:** Web Technologies — Front-End Development, Part 1
-**Student:** Your Full Name
-**Group:** Your Group
+**Student:** LiYixin
+**Group:** SE-2526
 
 A multi-page front-end project built with **jQuery 3.7.1** for Assignment #6. Each part of the
 assignment lives on its own page and every page is reachable from the navigation bar.
